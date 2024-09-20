@@ -4,72 +4,221 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Boutique Bazar</title>
   <!-- style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
   <!-- navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
+  <section id="nav">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Boutique Bazar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cart</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Account Profile
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Profile Details</a></li>
+                <li><a class="dropdown-item" href="#">Your Cart</a></li>
+                <li><a class="dropdown-item" href="#">Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
+    </nav>
+  </section>
+
+  <!-- banner -->
+  <section id="banner">
+    <img src="./assets/img3.jpg" class="d-block w-100" alt="..." height="100%">
+  </section>
+  </div>
+
+
+  <header>
+    <section>
+      <!-- <section id="cart">
+        <div class="cart-sidebar border rounded shadow-sm p-3">
+          <h5 class="mb-3">Shopping Cart</h5>
+          <div id="cart-products-list" class="mb-3"></div>
+          <p>Total Quantity: <span id="total-quantity">0</span></p>
+          <p>Total Price: $<span id="total-price">0.00</span></p>
+          <button class="btn checkout" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            CheckOut
+          </button>
+        </div>
+      </section> -->
+
+      <!-- cart -->
+      <section class="container content-section" id="shopping-cart">
+        <h3 style="text-decoration: underline;text-align: center; margin-bottom: 7%;">Shopping Cart</h3>
+
+        <table class="table table-hover table-cart">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody class="cart-items"></tbody>
+        </table>
+
+        <div class="cart-total">
+          <strong class="cart-total-title">Total</strong>
+          <span class="cart-total-price" style="text-align: right;">$0</span>
+        </div>
+
+        <div class="btn-purchase" style="margin-top: 10%;">
+          <button type="button" class="btn btn-dark btn-purchase"><i class="fa-solid fa-cart-shopping" style="margin-right: 6%;"></i>PURCHASE</button>
+        </div>
+      </section>
+
+      <!-- checkout
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title checkout" id="offcanvasExampleLabel">CheckOut</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              Let's go further into completing your order ... </div>
+            <div class="dropdown mt-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Payment Methods
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Visa</a></li>
+                <li><a class="dropdown-item" href="#">Credit Card</a></li>
+                <li><a class="dropdown-item" href="#">On Cash</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div> -->
+
+      <!-- Offcanvas content -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Checkout</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <p>Items in cart:</p>
+          <ul id="checkout-list"></ul>
+          <p>Total Price: $<span id="checkout-total-price">0.00</span></p>
+          <button class="btn btn-primary mt-3">Proceed to Checkout</button>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- filtering -->
+    <section id="filter">
+      <div class="container">
+        <div class="filter-container d-flex">
+          <div class="box inputBox d-flex gap-1 justify-content-between">
+            <input type="text" id="search-query" class="form-control" placeholder="search for products">
+          </div>
+          <div class="box d-flex gap-1 justify-content-between">
+            <label for="product-category"></label>
+            <select id="product-category" class="form-select" title="All Categories">
+              <option value=""></option>
+              <!-- <option value="All Categories" selected class="none">All Categories</option> -->
+              <option value="category1"></option>
+              <option value="category2"></option>
+              <option value="category2"></option>
+            </select>
+          </div>
+
+          <div class="box inputBox d-flex gap-1 justify-content-between">
+            <input type="number" id="min-price" class="form-control" placeholder="Min Price">
+          </div>
+          <div class="box inputBox d-flex gap-1 justify-content-between">
+            <input type="number" id="max-price" class="form-control" placeholder="Max Price">
+          </div>
+
+          <button type="button" id="apply-filters" class="btn btn-success" onclick="updateProductList()">Apply Filters</button>
+
+          <div class="box select d-flex gap-1 justify-content-between">
+            <label for="sort-by"></label>
+            <select id="sort-by" class="form-select" title="Sort by price">
+              <option value="Sort by price" selected class="none">Sort by price</option>
+              <option value="price-asc">Price Ascending</option>
+              <option value="price-desc">Price Descending</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </header>
+
+  <main>
+    <article>
+      <section>
+        <div class="col-md-8 text  text-center m-auto mt-3">
+          <div class="product-list ">
+            <h1>Boutique Bazar Products</h1>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- products -->
+      <section id="products">
+        <div class="container ">
+          <div class="row">
+            <div id="products-container" class="col-12 col-md-12 d-flex justify-content-center gap-1">
+              <div class="product-list">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <div class="pagination-container">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination" id="pagination-list">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
     </div>
-  </nav>
+  </footer>
 
-  <!-- navigation section -->
-  <div class="d-flex gap-2">
-    <!-- select categories -->
-    <select class="form-select form-select-lg mb-3" aria-label="Large select example">
-      <option selected>All Categories</option>
-      <option value="1">Women's Clothing</option>
-      <option value="2">Men's Clothing</option>
-      <option value="3">Unisex Clothing</option>
-      <option value="3">Unisex Clothing</option>
-      <option value="3">Unisex Clothing</option>
-      <option value="3">Unisex Clothing</option>
-    </select>
-    <!-- search -->
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+  <!-- script -->
 
-    <!-- btn -->
-    <button type="button" class="btn btn-success">Success</button>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./main.js"></script>
+  <script src="./cart.js"></script>
 
-    <!-- script -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./main.js"></script>
 </body>
 
 </html>
