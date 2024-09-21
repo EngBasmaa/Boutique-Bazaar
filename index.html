@@ -50,22 +50,11 @@
   <section id="banner">
     <img src="./assets/img3.jpg" class="d-block w-100" alt="..." height="100%">
   </section>
-  </div>
 
 
   <header>
     <section>
-      <!-- <section id="cart">
-        <div class="cart-sidebar border rounded shadow-sm p-3">
-          <h5 class="mb-3">Shopping Cart</h5>
-          <div id="cart-products-list" class="mb-3"></div>
-          <p>Total Quantity: <span id="total-quantity">0</span></p>
-          <p>Total Price: $<span id="total-price">0.00</span></p>
-          <button class="btn checkout" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-            CheckOut
-          </button>
-        </div>
-      </section> -->
+
 
       <!-- cart -->
       <section class="container content-section" id="shopping-cart">
@@ -87,89 +76,98 @@
           <span class="cart-total-price" style="text-align: right;">$0</span>
         </div>
 
-        <div class="btn-purchase" style="margin-top: 10%;">
-          <button type="button" class="btn btn-dark btn-purchase"><i class="fa-solid fa-cart-shopping" style="margin-right: 6%;"></i>PURCHASE</button>
+
+        <div class="d-flex justify-content-center mb-4">
+          <button type="button" class="btn btn-primary ckeckout" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            Go to Checkout
+          </button>
         </div>
       </section>
 
-      <!-- checkout
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <!-- checkout -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title checkout" id="offcanvasExampleLabel">CheckOut</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            Let's go further into completing your order ... </div>
+          <div class="dropdown mt-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Payment Methods
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Visa</a></li>
+              <li><a class="dropdown-item" href="#">Credit Card</a></li>
+              <li><a class="dropdown-item" href="#">On Cash</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="btn-purchase mt-5" style="margin-top: 10%;">
+          <button type="button" class="btn btn-dark btn-purchase m-1" onclick="alert('your purchase has been successfully')"><i class="fa-solid fa-cart-shopping" style="margin-right: 6%;"></i>PURCHASE</button>
+        </div>
+      </div>
+
+      </div>
+
+      </div>
+
+      <!-- Offcanvas content -->
+      <section>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title checkout" id="offcanvasExampleLabel">CheckOut</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Checkout</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            <div>
-              Let's go further into completing your order ... </div>
-            <div class="dropdown mt-3">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Payment Methods
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Visa</a></li>
-                <li><a class="dropdown-item" href="#">Credit Card</a></li>
-                <li><a class="dropdown-item" href="#">On Cash</a></li>
-              </ul>
+            <p>Items in cart:</p>
+            <ul id="checkout-list"></ul>
+            <p>Total Price: $<span id="checkout-total-price">0.00</span></p>
+            <button class="btn btn-primary mt-3">Proceed to Checkout</button>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- filtering -->
+      <section id="filter">
+        <div class="container">
+          <div class="filter-container d-flex">
+            <div class="box inputBox d-flex gap-1 justify-content-between">
+              <input type="text" id="search-query" class="form-control" placeholder="search for products">
+            </div>
+            <div class="box d-flex gap-1 justify-content-between">
+              <label for="category"></label>
+              <select id="category" class="form-select" title="All Categories">
+                <option value="">All Categories</option>
+
+              </select>
+            </div>
+
+            <div class="box inputBox d-flex gap-1 justify-content-between">
+              <input type="number" id="min-price" class="form-control" placeholder="Min Price">
+            </div>
+            <div class="box inputBox d-flex gap-1 justify-content-between">
+              <input type="number" id="max-price" class="form-control" placeholder="Max Price">
+            </div>
+
+            <button type="button" id="apply-filters" class="btn btn-success" onclick="updateProductList()">Apply Filters</button>
+
+            <div class="box select d-flex gap-1 justify-content-between">
+              <label for="sort-by"></label>
+              <select id="sort-by" class="form-select" title="Sort by price">
+                <option value="Sort by price" selected class="none">Sort by price</option>
+                <option value="price-asc">Price Ascending</option>
+                <option value="price-desc">Price Descending</option>
+              </select>
             </div>
           </div>
         </div>
-      </div>
-      </div> -->
 
-      <!-- Offcanvas content -->
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Checkout</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <p>Items in cart:</p>
-          <ul id="checkout-list"></ul>
-          <p>Total Price: $<span id="checkout-total-price">0.00</span></p>
-          <button class="btn btn-primary mt-3">Proceed to Checkout</button>
-        </div>
-      </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- filtering -->
-    <section id="filter">
-      <div class="container">
-        <div class="filter-container d-flex">
-          <div class="box inputBox d-flex gap-1 justify-content-between">
-            <input type="text" id="search-query" class="form-control" placeholder="search for products">
-          </div>
-          <div class="box d-flex gap-1 justify-content-between">
-            <label for="product-category"></label>
-            <select id="product-category" class="form-select" title="All Categories">
-              <option value=""></option>
-              <!-- <option value="All Categories" selected class="none">All Categories</option> -->
-              <option value="category1"></option>
-              <option value="category2"></option>
-              <option value="category2"></option>
-            </select>
-          </div>
-
-          <div class="box inputBox d-flex gap-1 justify-content-between">
-            <input type="number" id="min-price" class="form-control" placeholder="Min Price">
-          </div>
-          <div class="box inputBox d-flex gap-1 justify-content-between">
-            <input type="number" id="max-price" class="form-control" placeholder="Max Price">
-          </div>
-
-          <button type="button" id="apply-filters" class="btn btn-success" onclick="updateProductList()">Apply Filters</button>
-
-          <div class="box select d-flex gap-1 justify-content-between">
-            <label for="sort-by"></label>
-            <select id="sort-by" class="form-select" title="Sort by price">
-              <option value="Sort by price" selected class="none">Sort by price</option>
-              <option value="price-asc">Price Ascending</option>
-              <option value="price-desc">Price Descending</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </section>
 
   </header>
 
@@ -185,11 +183,11 @@
       </section>
 
       <!-- products -->
-      <section id="products">
+      <section id="products-container">
         <div class="container ">
           <div class="row">
             <div id="products-container" class="col-12 col-md-12 d-flex justify-content-center gap-1">
-              <div class="product-list">
+              <div class="product-list" id="product-list">
 
               </div>
             </div>
@@ -198,26 +196,32 @@
       </section>
     </article>
   </main>
+
   <footer>
-    <div class="pagination-container">
+    <!-- <div class="pagination-container">
       <nav aria-label="Page navigation example">
         <ul class="pagination" id="pagination-list">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
+    <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
           <li class="page-item"><a class="page-link" href="#">2</a></li>
           <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    <!-- <li class="page-item"><a class="page-link" href="#">Next</a></li>
         </ul>
       </nav>
-    </div>
+    </div> -->
+    <div id="pagination" class="pagination col-4"></div>
+
+    <div id="copyright" class="m-2">All Copyrights are reserved: @Basma Elmasry</div>
+
   </footer>
 
   <!-- script -->
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="./paginate.js"></script> -->
   <script src="./main.js"></script>
-  <script src="./cart.js"></script>
+
 
 </body>
 

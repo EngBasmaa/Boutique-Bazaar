@@ -4,7 +4,8 @@ body {
     box-sizing: border-box;
     background: #a3f6f9 !important;
     position: absolute;
-    top: 3.5rem
+    top: 3.5rem;
+    width: 100vw
 }
 
 .navbar-brand {
@@ -64,7 +65,7 @@ button {
 
 header {
     padding: 2rem 4rem;
-    background: rgb(63, 63, 63);
+    background: rgb(88, 88, 88);
     position: static;
     top: 8rem !important
 }
@@ -152,6 +153,18 @@ header {
     display: none
 }
 
+.ckeckout {
+    outline: none !important;
+    background: #97f3f6 !important;
+    color: #0b7b7e !important;
+}
+
+.ckeckout:focus,
+.ckeckout:hover {
+    background: #29adb1 !important;
+    color: #ccc !important;
+}
+
 /* ...... cart ...... */
 
 #cart {
@@ -167,15 +180,25 @@ header {
 /* cards of products */
 
 #products {
-    min-height: 10rem !important
+    min-height: 10rem !important;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-#products-container {
+#product-list {
     width: 100vw;
     padding: 1rem;
     flex-wrap: wrap;
     width: 100% !important;
     justify-content: space-between !important;
+    display: flex !important;
+
+}
+
+button {
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem
 }
 
 .product-grid,
@@ -183,6 +206,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .row {
@@ -190,7 +214,13 @@ header {
     width: 100%;
 }
 
-
+.product {
+    grid-column: 1 / span 3;
+    width: 27%;
+    /* Bootstrap uses percentages for responsiveness */
+    float: left;
+    margin-right: 2.5%;
+}
 
 img {
     width: cover !important
@@ -204,18 +234,29 @@ img {
 }
 
 /* pagination */
-.pagination-container {
+.pagination {
     display: flex !important;
     justify-content: center;
+    margin: auto !important;
+    margin-bottom: 2rem
 }
 
-.pagination-container nav {
+.pagination nav {
     position: static !important;
     display: inline-block !important;
     text-align: center !important;
     background: transparent !important;
 }
 
-.pagination-container ul.pagination {
+.pagination ul.pagination {
     justify-content: center !important;
+}
+
+#copyright {
+    height: 2rem;
+    color: #29adb1;
+    background: rgb(217, 247, 242);
+    margin: auto;
+    border-top: 2px solid #29adb1;
+    text-align: center
 }
